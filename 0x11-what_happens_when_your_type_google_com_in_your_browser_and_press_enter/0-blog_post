@@ -1,0 +1,41 @@
+The Journey of a URL: What Happens When You Press Enter
+When you type "https://www.google.com" into your browser and hit Enter, a remarkable sequence of events is set into motion to bring Google's homepage to your screen. Let’s dive into the key steps involved in this process:
+
+DNS Request
+The first step is translating the human-readable URL into an IP address, a process handled by the Domain Name System (DNS). Your browser checks its local cache for the IP address. If it's not found, the browser sends a DNS query to a DNS resolver, which then queries various DNS servers, eventually reaching Google's authoritative DNS server to get the correct IP address.
+
+Establishing a Connection: TCP/IP
+With the IP address obtained, your browser initiates a connection to Google’s server using the Transmission Control Protocol (TCP). This involves a three-way handshake:
+
+SYN: Your computer sends a synchronize packet to the server.
+SYN-ACK: The server responds with a synchronize-acknowledge packet.
+ACK: Your computer sends an acknowledge packet, establishing a stable connection.
+Firewall Check
+As the TCP packets travel to and from your computer, they pass through firewalls designed to protect your network. These firewalls scrutinize the packets to ensure they are safe and adhere to the security rules configured.
+
+Secure Connection: HTTPS/SSL
+To secure the data exchange, your browser and Google’s server establish an HTTPS connection, utilizing SSL/TLS protocols. This process involves:
+
+Handshake: Exchanging cryptographic keys to create a secure session.
+Encryption: Ensuring all data transmitted is encrypted and secure from interception.
+Load Balancer
+Once the secure connection is established, your request reaches Google’s load balancer. The load balancer distributes incoming traffic across multiple servers to prevent any single server from becoming overloaded, thereby ensuring reliability and quick response times.
+
+Web Server
+The load balancer forwards your request to one of Google’s web servers. The web server’s job is to handle the HTTP request, which includes fetching the necessary resources like HTML, CSS, and JavaScript files that make up the webpage.
+
+Application Server
+For dynamic content, the web server interacts with an application server. The application server executes backend logic to process user-specific tasks, such as personalizing the homepage or checking if you’re logged in. Google’s application servers are optimized for efficient handling of such operations.
+
+Database Interaction
+If the application server needs to retrieve or store data, it queries a database server. Google’s databases are highly optimized for fast data access, ensuring quick retrieval of user data and other necessary information.
+
+Rendering the Webpage
+After processing the request, the application server sends the data back to the web server, which then sends it to your browser. Your browser processes the HTML, CSS, and JavaScript, rendering the interactive webpage you see.
+
+Conclusion
+This entire process happens in a fraction of a second, thanks to advanced technologies and optimizations at every step. From DNS lookups and secure connections to load balancing and database queries, each component plays a crucial role in delivering a fast, secure, and seamless browsing experience.
+
+Understanding these steps highlights the complexity and efficiency of modern web infrastructure, showcasing how various technologies work together to provide an optimal user experience.
+
+Feel free to connect with me for more insights into web technologies and infrastructure!
