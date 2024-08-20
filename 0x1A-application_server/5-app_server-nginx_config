@@ -1,0 +1,20 @@
+# Configures Nginx to serve the route /airbnb-onepage/ from AirBnB_clone_v2.
+server {
+    listen 80;
+    server_name your-public-ip;  # Replace with your server's public IP address
+
+    # Proxy requests to / to Gunicorn instance on port 5003
+    location / {
+        proxy_pass http://100.26.173.187:5003;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    # Serve static files from web_dynamic/static/
+    location /static/ {
+        alias /path/to/AirBnB_clone_v4/web_dynamic/static/;
+        expires 30d;
+    }
+}
